@@ -19,7 +19,7 @@ while True:
                     umi = '%.2f' % humi
                     temp = '%.2f' % temp
                     # Sending the data to thingspeak
-                    conn = urllib2.urlopen(baseURL + '&field1=%s&field2=%s' % (temp, humi))
+                    conn = urllib.urlopen(baseURL + '&field1=%s&field2=%s' % (temp, humi))
                     print (conn.read())
                     # Closing the connection
                     conn.close()
@@ -28,4 +28,5 @@ while True:
             # DHT22 requires 2 seconds to give a reading, so make sure to add delay of above 2 seconds.
             sleep(20)
     except:
+			print ('Fataility')
             break
