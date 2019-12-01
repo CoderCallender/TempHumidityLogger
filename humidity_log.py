@@ -16,7 +16,8 @@ def measure(channel):
         
         # read
         read = channel.get({})
-        print("Read:", read)
+        #print("Read:", read)
+        print("Update Success!")
         
     except:
         print("connection failed")
@@ -28,4 +29,4 @@ if __name__ == "__main__":
     while True:
         measure(channel)
         # free account has an api limit of 15sec
-        time.sleep(20)
+        time.sleep(600) #update every 10 mins
