@@ -1,5 +1,5 @@
 import sys
-import urllib2
+import urllib
 from time import sleep
 import Adafruit_DHT as dht
 # Enter Your API key here
