@@ -21,7 +21,13 @@ while True:
                     # Sending the data to thingspeak
                     #conn = urllib.urlopen(baseURL + '&field1=%s&field2=%s' % (temp, humi))
                     #print (conn.read())
-                    print(temp)
+                    params = urllib.urlencode({'field1': temp, 'key':key })
+                    conn = httplib.HTTPConnection("api.thingspeak.com:80")
+                    conn.request("POST", "/update", params, headers)
+                    response = conn.getresponse()
+                    #print temp
+                    print response.status, response.reason
+                    data = response.read()
                     # Closing the connection
                     conn.close()
             else:
