@@ -23,7 +23,8 @@ def measure(channel):
  
  
 if __name__ == "__main__":
-    channel = thingspeak.Channel(id=channel_id, write_key=write_key, api_key=read_key)
+    #channel = thingspeak.Channel(id=channel_id, write_key=write_key, api_key=read_key)
+    channel = thingspeak.Channel(id=channel_id, api_key=write_key)
     while True:
         measure(channel)
         # free account has an api limit of 15sec
