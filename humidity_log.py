@@ -20,7 +20,7 @@ while True:
                     temp = '%.2f' % temp
                     # Sending the data to thingspeak
                     conn = urllib2.urlopen(baseURL + '&field1=%s&field2=%s' % (temp, humi))
-                    print conn.read()
+                    print (conn.read())
                     # Closing the connection
                     conn.close()
             else:
