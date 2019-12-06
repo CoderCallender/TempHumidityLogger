@@ -14,7 +14,7 @@ def measure(channel):
         humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
         format(humidity, '.2f')
         format(temperature, '.2f')
-       # print ('temp = 
+
         # write
         response = channel.update({'field1': temperature, 'field2': humidity})
         
@@ -29,11 +29,10 @@ def measure(channel):
  
  
 if __name__ == "__main__":
-    #channel = thingspeak.Channel(id=channel_id, write_key=write_key, api_key=read_key)
-    #logging.basicConfig(format='%(asctime)s - %(message)s')
+
     logging.basicConfig(filename='app.log', filemode='w', format='%(asctime)s - %(message)s')
     channel = thingspeak.Channel(id=channel_id, api_key=write_key)
-    while True:
-        measure(channel)
+    #while True:    #all timings will now be called from chron
+    measure(channel)
         # free account has an api limit of 15sec
-        time.sleep(600) #update every 10 mins
+       # time.sleep(600) #update every 10 mins
