@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import thingspeak
 import time
 import Adafruit_DHT
